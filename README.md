@@ -13,6 +13,7 @@ It allows you to make simple changes to an existing sorting algorithm and run yo
 ## Write Your Own
 
 ##Installation
+
     pip install sorting-visualizer
 
 ##Limitations
