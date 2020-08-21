@@ -16,7 +16,8 @@ It allows you to make simple changes to an existing sorting algorithm and run yo
 
     pip install sorting-visualizer
 
-##Limitations
+## Limitations
+
 The most obvious limitation of this framework is that sorting algorithm should be "in place". 
 However, note that this definition of in place doesn't strictly mean it should take O(1) space.
 Rather this means that the algorithm should make all the changes on the array itself. 
