@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class Plotter(ABC):
+class PlottingHistory(ABC):
     @abstractmethod
     def set(self, index, value):
         pass
@@ -9,6 +9,15 @@ class Plotter(ABC):
     @abstractmethod
     def refresh(self, data):
         pass
+
+    @abstractmethod
+    def highlight(self, index):
+        pass
+
+
+class Plotter(ABC):
+    def __init__(self, plotting_history: PlottingHistory):
+        self._plotting_history = plotting_history
 
     @abstractmethod
     def animate(self):
@@ -16,15 +25,8 @@ class Plotter(ABC):
 
 
 class MatplotlibPlotter(Plotter):
-
-    def __init__(self):
-        pass  # TODO
-
-    def set(self, index, value):
-        pass
-
-    def refresh(self, data):
-        pass
-
     def animate(self):
+        """
+        Animates the plotting history with matplotlib implementation
+        """
         pass

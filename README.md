@@ -1,4 +1,6 @@
 # YAVS (Yet Another Visualizer for Sorting)
+This is a work in progress
+
 In the early phases of a CS education, almost every student learns about sorting. 
 There are many visualizers for students to internalize these procedures. 
 They are quite nice and for some cases specific, but not flexible. 

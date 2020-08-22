@@ -1,23 +1,24 @@
 from collections import MutableSequence
+from yavs.plotter import PlottingHistory
 
 
 class PlottableList(MutableSequence):
-    def __init__(self, plotter, iterable=()):
+    def __init__(self, plotting_history, iterable=()):
         self._data = []
         self.extend(iterable)
-        self._plotter = plotter
-        self._plotter.refresh(self._data)
+        self._plotting_history = plotting_history
+        self._plotting_history.refresh(self._data)
 
     def insert(self, index, value):
         self._data.insert(index, value)
-        self._plotter.refresh(self._data)
+        self._plotting_history.refresh(self._data)
 
     def __delitem__(self, index):
         del self._data[index]
-        self._plotter.refresh(self._data)
+        self._plotting_history.refresh(self._data)
 
     def __setitem__(self, index, value):
-        self._plotter.set(index, value)
+        self._plotting_history.set(index, value)
         self._data.__setitem__(index, value)
 
     def __getitem__(self, key):
