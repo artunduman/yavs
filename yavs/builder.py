@@ -2,6 +2,7 @@ from yavs.algorithm_base import SortingAlgorithm
 from yavs.sorting_visualizer import SortingVisualizer
 from yavs.plotter import MatplotlibPlotter, Plotter
 
+
 class Builder:
     def __init__(self):
         self._sorting_algorithms = []  # Type: List[SortingAlgorithm]

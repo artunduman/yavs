@@ -25,6 +25,5 @@ class SortingVisualizer:
             algorithm.sort(array)
 
 
-
     def _create_list(self):
         pass
