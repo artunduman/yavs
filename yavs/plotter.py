@@ -4,6 +4,7 @@ from matplotlib import pyplot as plt
 from matplotlib import animation
 from typing import List
 import logging
+import uuid
 
 logger = logging.getLogger('yavs')
 
@@ -43,6 +44,10 @@ class PlottingHistory(ABC):
 
 
 class ConcretePlottingHistory(PlottingHistory):
+    """
+    This is the default and simplest PlottingHistoty implementation
+    Feel free to build your implementation as you wish
+    """
     def __init__(self):
         self._actions = []
         self._action_index = 0
@@ -87,6 +92,7 @@ class MatplotlibPlotter(Plotter):
             Action.SET: self._set,
         }
         self._bars = []
+        self.axes
 
     def _highlight(self, index):
         return
@@ -108,10 +114,9 @@ class MatplotlibPlotter(Plotter):
         Animates the plotting history with matplotlib implementation
         """
 
-        n, bins, patches = plt.hist(values, bins=np.arange(50, 140, 2), align='left', color='g')
         figure = plt.figure()
         rows = len(self._plotting_histories)
-        axs = figure.subplots(rows)
+        axs = figure.add_subplot()
         axs.set_xticks([])
         axs.set_yticks([])
 
@@ -121,3 +126,4 @@ class MatplotlibPlotter(Plotter):
             action_func(*action[1:])
         # TODO more manipulation
         anim = animation.FuncAnimation()
+        plt.show()
